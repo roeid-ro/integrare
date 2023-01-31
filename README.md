@@ -85,6 +85,7 @@ Pentru înrolarea în ROeID, după încheierea protocoalelor / acordurilor inter
 - Stabilirea adreselor web la care se va face comunicarea. Acestea trebuie să fie securizate și trebuie făcut schimb de date între ROeID și furnizorul de servicii pentru a putea cripta/decripta informațiile.
 
 Din punct de vedere al Platformei ROeID integrarea prin protocol OpenID implică realizarea următorilor pași în platforma ROeID:
+
 a)	Se definește maparea de atribute în zona de Claims de la Authorization Provider: Exemplu: telefon<>mobile, prenume<>givenName, etc.
 
 b)	Se creează un profil nou (scope) în Authorization Provider-ul definit deja. Acest profil va conține lista de atribute stabilită anterior. Exemplu:ServiceProviderNameScope:Gender,CurrentAddress, PersonalIdentifier,FirstName,LastName
