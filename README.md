@@ -2,7 +2,7 @@
 
 ## Modelul de incredere pentru SSO
 
-În vederea realizării parteneriatului între Platforma ROeID și Furnizorii de Servicii de eGuvernare, este necesara stabilirea unor acorduri / protocoale de colaborare pentru asigurarea încrederii și transferului de identități și credențiale de autentificare între Platforma ROeID și sistemele eGuvernare. Încheierea acestor acorduri / protocoale va permite Furnizorilor de Servicii eGuvernare să ia decizii privind accesul în sistemele proprii pe baza nivelului de încredere definit în cadrul Platformei ROeID![image](https://user-images.githubusercontent.com/113096980/215775261-e123ff17-dd47-4443-a14c-76610c82836a.png)
+În vederea realizării parteneriatului între Platforma ROeID și Furnizorii de Servicii de eGuvernare este necesara stabilirea unor acorduri / protocoale de colaborare pentru asigurarea încrederii și transferului de identități și credențiale de autentificare între Platforma ROeID și sistemele eGuvernare. Încheierea acestor acorduri / protocoale va permite Furnizorilor de Servicii eGuvernare să ia decizii privind accesul în sistemele proprii pe baza nivelului de încredere definit în cadrul Platformei ROeID![image](https://user-images.githubusercontent.com/113096980/215775261-e123ff17-dd47-4443-a14c-76610c82836a.png)
 
 ## Autentificare tip Single-Sign-On (SSO)
 
