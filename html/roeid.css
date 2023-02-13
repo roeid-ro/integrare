@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+.roeid-button {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    color: #fff;
+    font-family: "Sora", HelveticaNeue, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+    font-weight: 600;
+    line-height: 1em;
+    text-decoration: none;
+    border: 0;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+
+}
+.roeid-button-icon,
+.roeid-button-text {
+    display: block;
+    float: left;
+}
+.roeid-button-icon {
+    margin: 0 -0.4em 0 0;
+    padding: 0.6em 0.8em 0.5em;
+}
+.roeid-button-text {
+    padding: 0.95em 1em 0.85em 1em;
+    font-size: 1.15em;
+    text-align: center;
+}
+svg {
+    width: 1.8em;
+    height: 1.8em;
+    fill: #fff;
+}
+.roeid-button-size-s {
+    font-size: 10px;
+    width: 180px;
+	border-radius: 0.5rem;
+
+}
+.roeid-button-size-s > span img {
+    width: 19px;
+    height: 19px;
+    border: 0;
+}
+.roeid-button-size-m {
+    font-size: 15px;
+    width: 270px;
+	border-radius: 0.8rem;
+}
+.roeid-button-size-m > span img {
+    width: 29px;
+    height: 29px;
+    border: 0;
+}
+.roeid-button-size-l {
+    font-size: 20px;
+    width: 360px;
+	border-radius: 1rem;
+}
+.roeid-button-size-l > span img {
+    width: 38px;
+    height: 38px;
+    border: 0;
+}
+.roeid-button-size-xl {
+    font-size: 25px;
+    width: 450px;
+	border-radius: 1rem;
+}
+.roeid-button-size-xl > span img {
+    width: 47px;
+    height: 47px;
+    border: 0;
+}
+.button-roeid {
+    background-color: #2e5ae6;
+    color: #fff;
+}
+.button-roeid svg {
+    fill: #fff;
+}
+.button-roeid:hover {
+    background-color: #09338a;
+    color: #fff;
+}
+.button-roeid:active {
+    background-color: #83beed;
+    color: #036;
+}
+
+.button-roeid-white {
+    background-color: white;
+    color: #2e5ae6;
+}
+.button-roeid-white svg {
+    fill: #2e5ae6;
+}
+.button-roeid-white:hover {
+    background-color: #a2b4c5;
+    color: #2e5ae6;
+}
+.button-roeid-white:active {
+    background-color: #83beed;
+    color: #2e5ae6;
+}
