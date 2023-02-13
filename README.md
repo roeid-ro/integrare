@@ -171,3 +171,8 @@ Paleta de culori folosita in ROeiD
 - ![#f1f3f8](https://placehold.co/15x15/f1f3f8/f1f3f8.png) `#f1f3f8` Ghost white
 - ![#d1d9e8](https://placehold.co/15x15/d1d9e8/d1d9e8.png) `#d1d9e8` Levender
 
+In paginile web ale furnizorilor de servicii se vor insera butoane de tip "Conectare cu ROeiD" folosind fisierele regasite aici: https://github.com/roeid-ro/integrare/tree/main/html, redirectionand catre un link de tipul:
+
+`cede `
+
+![image](https://user-images.githubusercontent.com/113096980/218539101-8a57b0c2-30d8-4f1f-945d-b6b1434ef8cc.png)
