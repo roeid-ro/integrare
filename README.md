@@ -173,4 +173,15 @@ Paleta de culori folosita in ROeiD
 
 In paginile web ale furnizorilor de servicii se vor insera butoane de tip "Conectare cu ROeiD" folosind fisierele regasite aici: https://github.com/roeid-ro/integrare/tree/main/html
 
+Iata un exemplu de vizualizare a butoanelor pe fundal alb si albastru. Culorile propuse sunt din paleta ROeiD dar imaginile in format SVG precum si fontul permit integrarea in orice alta paleta de culori a siturilor partenere. Recomandam folosirea logo-ului primar pentru fundal deschis la culoare si a celui secundar pentru fundal inchis la culoare. Se va afisa textul `Conectare cu ROeID` intocmai in continutul butonului.
+
+Border, border radius, border, precum si celelalte elemente de stil se vor implementa in concordanta cu identitatea vizuala a sitului web al furnizorului de servicii, fara a acoperi textul sau logo-ul ROeiD.
+
 ![image](https://user-images.githubusercontent.com/113096980/218539101-8a57b0c2-30d8-4f1f-945d-b6b1434ef8cc.png)
+
+Fonturile folosite in aplicatia mobila si in situl web ROeiD sunt din familia Sora, accesibil aici: https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap
+
+Logo-ul ROeiD in varianta color negru-albastru si alb negativ il gasiti aici:
+- https://github.com/roeid-ro/integrare/blob/main/html/roeid_logo_primary.svg
+- https://github.com/roeid-ro/integrare/blob/main/html/roeid_logo_secondary.svg
+
