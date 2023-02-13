@@ -86,22 +86,22 @@ svg {
     color: #fff;
 }
 .button-roeid:active {
-    background-color: #83beed;
+    background-color: #8298db;
     color: #036;
 }
 
 .button-roeid-white {
-    background-color: white;
+    background-color: #f1f3f8;
     color: #2e5ae6;
 }
 .button-roeid-white svg {
     fill: #2e5ae6;
 }
 .button-roeid-white:hover {
-    background-color: #a2b4c5;
+    background-color: #d1d9e8;
     color: #2e5ae6;
 }
 .button-roeid-white:active {
-    background-color: #83beed;
+    background-color: #8298db;
     color: #2e5ae6;
 }

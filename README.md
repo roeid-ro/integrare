@@ -159,3 +159,15 @@ Din punct de vedere al sistemului informatic utilizat de Furnizorii de servicii 
 ## Date puse la dispozitie de ROeiD si formatul acestora
 
 ## Identitate vizuala ROeiD
+
+Paleta de culori folosita in ROeiD
+
+- ![#000000](https://placehold.co/15x15/000000/000000.png) `#000000` Black
+- ![#09338a](https://placehold.co/15x15/09338a/09338a.png) `#09338a` Button hover
+- ![#2e5ae6](https://placehold.co/15x15/2e5ae6/2e5ae6.png) `#2e5ae6` Royal blue
+- ![#8298db](https://placehold.co/15x15/8298db/8298db.png) `#8298db` Cornflower blue
+- ![#f4f4f4](https://placehold.co/15x15/f4f4f4/f4f4f4.png) `#f4f4f4` Light gray
+- ![#f2b62c](https://placehold.co/15x15/f2b62c/f2b62c.png) `#f2b62c` Goldenrod
+- ![#f1f3f8](https://placehold.co/15x15/f1f3f8/f1f3f8.png) `#f1f3f8` Ghost white
+- ![#d1d9e8](https://placehold.co/15x15/d1d9e8/d1d9e8.png) `#d1d9e8` Levender
+
