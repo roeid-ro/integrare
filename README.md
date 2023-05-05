@@ -177,7 +177,8 @@ Iata un exemplu de vizualizare a butoanelor pe fundal alb si albastru. Culorile 
 
 Border, border radius, border, precum si celelalte elemente de stil se vor implementa in concordanta cu identitatea vizuala a sitului web al furnizorului de servicii, fara a acoperi textul sau logo-ul ROeiD.
 
-![image](https://user-images.githubusercontent.com/113096980/218539101-8a57b0c2-30d8-4f1f-945d-b6b1434ef8cc.png)
+![image](https://user-images.githubusercontent.com/113096980/236464864-6d572607-00e2-4cc4-bf2c-5443f6dc6d97.png)
+
 
 Fonturile folosite in aplicatia mobila si in situl web ROeiD sunt din familia Sora, accesibil aici: https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap
 
