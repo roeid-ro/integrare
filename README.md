@@ -4,6 +4,10 @@
 
 În vederea realizării parteneriatului între Platforma ROeID și Furnizorii de Servicii de eGuvernare este necesara stabilirea unor acorduri / protocoale de colaborare pentru asigurarea încrederii și transferului de identități și credențiale de autentificare între Platforma ROeID și sistemele eGuvernare. Încheierea acestor acorduri / protocoale va permite Furnizorilor de Servicii eGuvernare să ia decizii privind accesul în sistemele proprii pe baza nivelului de încredere definit în cadrul Platformei ROeID![image](https://user-images.githubusercontent.com/113096980/215775261-e123ff17-dd47-4443-a14c-76610c82836a.png)
 
+## Primul pas
+
+Primul pas din punct de vedere tehnic dupa ce se semneaza protocolul de colaborare este sa transmiteti echipei ADR solicitarea pentru credentiale mediu de test si productie, specificand care este **redirect_url** adica unde sa redirecteze sistemul ROeID utilizatorul spre platforma dvs. Acest element este obligatoriu sa fie solicitat in avans, cu mentiunea ca se poate modifica pe parcurs la cerere
+
 ## Autentificare tip Single-Sign-On (SSO)
 
 Accesul Single Sign-On (SSO) presupune o relație între două sau mai multe părți interesate în ceea ce privește autentificarea utilizatorilor și care depășește diferențele tehnologice între diferite entități. 
@@ -153,7 +157,6 @@ Din punct de vedere al sistemului informatic utilizat de Furnizorii de servicii 
 7. Dacă se dorește crearea automată a contului utilizatorului utilizând informațiile primite de la ROeID, atunci va fi nevoie de customizarea aplicației utilizată de Furnizorul de Servicii eGuvernare. Datele despre utilizator sunt primite de la ROeID prin atributele din response assertion și se poate automatiza crearea contului în platforma Furnizorului de Servicii eGuvernare. Daca este nevoie de date suplimentare care nu sunt diponibile în platforma ROeID, atunci acestea trebuie solicitate de către furnizorul de servicii eGuvernare direct de la utilizator pe baza informațiilor de contact primite (e-mail / telefon etc.).
 8. Modificarea paginii de login și adaugarea unui buton/link pentru ”Login prin ROeID” și care să utilizeze pluginul creat/configurat anterior.
 
-
 ## Expunerea de servicii pe portalul www.roeid.ro si in aplicatia mobila ROeiD
 
 Pentru a adauga un serviciu in pagina aplicatiei mobile si pe portalul web www.roeid.ro furnizorul de servicii va transmite ADR urmatoarele informatii:
@@ -220,3 +223,15 @@ Logo-ul ROeiD in varianta color negru-albastru si alb negativ il gasiti aici:
 - https://github.com/roeid-ro/integrare/blob/main/html/roeid_logo_primary.svg
 - https://github.com/roeid-ro/integrare/blob/main/html/roeid_logo_secondary.svg
 
+
+## Mediul de test ROeID
+
+Pentru a veni in sprijinul furnizorilor de servicii in perioada premergatoare inrolarii am creat un mediu complet de dezvoltare și integrare disponibil pentru a fi folosit in teste.
+
+In acest scop am creat o aplicatie de inrolare utilizatori test si autentificare cu al doilea factor (push notification) speciala pentru mediul de test, versiune valabila doar pentru Android. O puteti downloada de la urmatoarea adresa web :
+
+**Testarea in mediul de test se face doar cu aplicatia mentionata mai sus**, aplicatia disponibila in Google Play si Apple Store nu poate fi folosita pe mediul de test
+
+**Pe mediul de test se aproba automat identitatea digitala daca se prezinta un SELFIE similar cu imaginea din buletin**
+
+Dupa inrolare, puteti in continuare testa integrarea cu mediul dvs. folosind utilizatorii inrolati, precum puteti testa si autentificarea in site-ul demo creat pentru a simula integrarea: http://demo.beta.roeid.ro/sts
