@@ -196,7 +196,7 @@ ROeID pune la dispozitia furnizorilor de servicii datele din buletinul cetateanu
     "email"
   ],
 `
-Mai multe detalii pot fi vizualizate in fisierele de configurare openID la adrese de tipul: [https://sso.roeid.ro/affwebservices/CASSO/oidc/ghiseul/.well-known/openid-configuration](https://sso.roeid.ro/affwebservices/CASSO/oidc/demo/.well-known/openid-configuration)
+Mai multe detalii pot fi vizualizate in fisierele de configurare openID la adrese de tipul: https://sso.roeid.ro/affwebservices/CASSO/oidc/demo/.well-known/openid-configuration
 
 ## Identitate vizuala ROeiD
 
