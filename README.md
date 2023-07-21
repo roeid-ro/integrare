@@ -6,7 +6,10 @@
 
 ## Primul pas
 
-Primul pas din punct de vedere tehnic dupa ce se semneaza protocolul de colaborare este sa transmiteti echipei ADR solicitarea pentru credentiale mediu de test si productie, specificand care este **redirect_url** adica unde sa redirecteze sistemul ROeID utilizatorul spre platforma dvs. Acest element este obligatoriu sa fie solicitat in avans, cu mentiunea ca se poate modifica pe parcurs la cerere
+Primul pas din punct de vedere tehnic dupa ce se semneaza protocolul de colaborare este sa transmiteti echipei ADR solicitarea pentru credentiale mediu de test si productie, specificand care este **redirect_url** 
+
+>Warning
+>Redirect_url reprezinta adresa unde sa redirecteze sistemul ROeID utilizatorul spre platforma dvs. Acest element este obligatoriu sa fie solicitat in avans, cu mentiunea ca se poate modifica pe parcurs la cerere
 
 ## Autentificare tip Single-Sign-On (SSO)
 
@@ -229,6 +232,8 @@ Logo-ul ROeiD in varianta color negru-albastru si alb negativ il gasiti aici:
 Pentru a veni in sprijinul furnizorilor de servicii in perioada premergatoare inrolarii am creat un mediu complet de dezvoltare și integrare disponibil pentru a fi folosit in teste.
 
 In acest scop am creat o aplicatie de inrolare utilizatori test si autentificare cu al doilea factor (push notification) speciala pentru mediul de test, versiune valabila doar pentru Android. O puteti downloada de la urmatoarea adresa web :
+
+https://drive.google.com/drive/folders/1wnWUCj61-x-LSnSpgq2LZflMHQQy0xPz?usp=sharing
 
 **Testarea in mediul de test se face doar cu aplicatia mentionata mai sus**, aplicatia disponibila in Google Play si Apple Store nu poate fi folosita pe mediul de test
 
