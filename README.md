@@ -159,6 +159,10 @@ Din punct de vedere al sistemului informatic utilizat de Furnizorii de servicii 
 Pentru a adauga un serviciu in pagina aplicatiei mobile si pe portalul web www.roeid.ro furnizorul de servicii va transmite ADR urmatoarele informatii:
 1. Nume scurt (12 caractere) care va aparea sub iconita. De exemplu **ghiseul**
 2. Logo 300x300 in format PNG, versiune light/dark (pe fundal alb si negru)
+
+![pcue pcue logo_320x320_fundal_alb](https://github.com/roeid-ro/integrare/assets/113096980/36ae9160-bd85-47c2-8fa5-1c4e6dade6f3)
+![logo_320x320_fundal_ex_roeid](https://github.com/roeid-ro/integrare/assets/113096980/eadb12e1-3eb2-49a9-b967-474f3e4a6413)
+
 3. Descriere scurta de 60 de caractere a denumirii, de exemplu **Plateste online impozite si taxe catre institutiile publice inrolate in sistem**
 4. Descriere lunga, intre 100 si 200 de cuvinte care apare in ecranul afisat la apasarea pe iconita.
 5. URL pentru initierea conectarii la sistem, de preferat un URL care face redirect la Roeid login page, ca de exemplu: https://www.ghiseul.ro/ghiseul/public/login-pscid . Scopul este ca la apasarea acestui link utilizatorului sa i se deschida pagina de login unde introduce user/parola urmand ca la finalizare proces sa fie redirectionat in aplicatia dvs.
