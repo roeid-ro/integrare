@@ -8,8 +8,8 @@
 
 Primul pas din punct de vedere tehnic dupa ce se semneaza protocolul de colaborare este sa transmiteti echipei ADR solicitarea pentru credentiale mediu de test si productie, specificand care este **redirect_url** 
 
->Warning
->Redirect_url reprezinta adresa unde sa redirecteze sistemul ROeID utilizatorul spre platforma dvs. Acest element este obligatoriu sa fie solicitat in avans, cu mentiunea ca se poate modifica pe parcurs la cerere
+>ATENTIE !!!
+>Redirect_url reprezinta adresa unde sa redirecteze sistemul ROeID utilizatorul spre platforma dvs. Acest element este **obligatoriu** sa fie solicitat in avans, cu mentiunea ca se poate modifica pe parcurs la cerere
 
 ## Autentificare tip Single-Sign-On (SSO)
 
