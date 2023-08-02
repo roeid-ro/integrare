@@ -240,3 +240,19 @@ https://drive.google.com/drive/folders/1wnWUCj61-x-LSnSpgq2LZflMHQQy0xPz?usp=sha
 **Pe mediul de test se aproba automat identitatea digitala daca se prezinta un SELFIE similar cu imaginea din buletin**
 
 Dupa inrolare, puteti in continuare testa integrarea cu mediul dvs. folosind utilizatorii inrolati, precum puteti testa si autentificarea in site-ul demo creat pentru a simula integrarea: http://demo.beta.roeid.ro/sts
+
+## Tips & Tricks pentru dezvoltatori software
+
+Presupunand ca dezvoltati un sistem informatic pe care doriti sa il integrati cu ROeID este obligatoriu sa alegeti un nume de domeniu pe care sa testati integrarea sistemului dvs. Spre exemplu **dev.mydemosystem.ro**. 
+
+Daca lucrati pe un server dedicat este util ca acest DNS (dev.demosystem.ro) sa fie accesibil de pe calculatorul dvs prin intermediul **HTTPS** cu un certificat **TRUSTED** astfel incat sa nu fie probleme cu browserul. Daca lucrati pe **localhost** gazduind situl pe propriul dvs. calculator va recomandam sa folositi utilitarul **caddy** pentru a implementa un reverse proxy SSL trusted.
+
+https://caddyserver.com/docs/quick-starts/reverse-proxy
+
+Iata un exemplu de parametri de pornire pentru caddy pentru a trimite tot traficul spre aplicatia dvs pornita pe portul 3000.
+```
+caddy reverse_proxy --from dev.mydemosystem.ro:443 --to locahost:3000
+```
+
+Integrarea cu roeid presupune din partea dvs. crearea unei pagini spre care ROeID sa trimita browserul dupa ce procesul de autentificare s-a terminat cu succes, pagina regasita in documentatie sub numele de **redirect_uri**. Aceasta adresa se transmite echipei tehnice atat pentru mediul de test cat si pentru cel de productie, putand avea mai multe adrese simultan pentru ambele medii.
+
