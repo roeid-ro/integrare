@@ -256,3 +256,14 @@ caddy reverse_proxy --from dev.mydemosystem.ro:443 --to locahost:3000
 
 Integrarea cu roeid presupune din partea dvs. crearea unei pagini spre care ROeID sa trimita browserul dupa ce procesul de autentificare s-a terminat cu succes, pagina regasita in documentatie sub numele de **redirect_uri**. Aceasta adresa se transmite echipei tehnice atat pentru mediul de test cat si pentru cel de productie, putand avea mai multe adrese simultan pentru ambele medii.
 
+### Exemplu de configurare pentru Keycloak
+
+![image](https://github.com/roeid-ro/integrare/assets/113096980/45cf9ffe-8b06-4666-ac32-92dbc0327ace)
+
+![image](https://github.com/roeid-ro/integrare/assets/113096980/06f67b48-92c4-4529-b165-2344e30d7063)
+
+![image](https://github.com/roeid-ro/integrare/assets/113096980/024b373d-4508-423d-aeb9-91d487c0cd5c)
+
+
+
+
