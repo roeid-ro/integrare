@@ -264,6 +264,102 @@ Integrarea cu roeid presupune din partea dvs. crearea unei pagini spre care ROeI
 
 ![image](https://github.com/roeid-ro/integrare/assets/113096980/024b373d-4508-423d-aeb9-91d487c0cd5c)
 
+![image](https://github.com/roeid-ro/integrare/assets/113096980/d3301999-3256-456b-81ea-5ab90c39f707)
 
+![image](https://github.com/roeid-ro/integrare/assets/113096980/d39c598f-5cac-4841-bbec-71168ec50317)
+Se vor complata toate atributele folosite
 
+La fiecare login din ROeID in Keycloack se vor prelua automat aceste atribute ca in exemplul de mai jos.
 
+![image](https://github.com/roeid-ro/integrare/assets/113096980/3894cde4-8795-40b6-9ebd-256c4c4ad451)
+
+### Exemplu de integrare cu node.js
+
+Codul de mai jos este cu titlu de exemplu, nu functioneaza daca faceti copy paste, mai are nevoie de initializari specifice node.js cu middleware express
+
+```
+const openId = require('express-openid-connect')
+
+const openIdConfig = {
+  session: {
+    store: new RedisStore({ client: cache.redisLegacy })
+  },
+  authRequired: false,
+  routes: {
+    // Override the default login route to use your own login route as shown below
+    login: false,
+    // Pass a custom path to redirect users to a different
+    // path after logout.
+    callback: '/sso'
+  },
+  authorizationParams: {
+    response_type: constants.OPENID_RESPONSE_TYPE, // This requires you to provide a client secret
+    scope: constants.OPENID_SCOPE,
+    response_mode: constants.OPENID_RESPONSE_MODE
+  },
+  baseURL: constants.OPENID_BASEURL,
+  clientID: constants.OPENID_CLIENTID,
+  issuerBaseURL: constants.OPENID_ISSUER,
+  secret: constants.OPENID_SECRET,
+  clientSecret: constants.OPENID_CLIENTSECRET
+}
+router.use(openId.auth(openIdConfig))
+
+// Middleware to make the `user` object available for all views
+router.use(function (req, res, next) {
+  res.locals.user = req.oidc.user
+  next()
+})
+
+router.get('/', (req, res) => {
+  res.send('<a href="/api/v2be/admin">Admin Section</a>')
+})
+
+router.get(
+  '/login',
+  tryCatch((req, res) =>
+    res.oidc.login({
+      returnTo: '/public/app',
+      authorizationParams: {
+        redirect_uri: constants.OPENID_REDIRECT,
+        response_type: 'id_token', // This requires you to provide a client secret
+        scope: 'openid bapi', // bapi is provided by ROeID for this client id
+        response_mode: 'form_post'
+      }
+    })
+  )
+)
+
+router.get(
+  '/admin',
+  openId.requiresAuth(),
+  tryCatch((req, res) => {
+    res.send(`Hello ${req.oidc.user.sub}, this is the admin section.`)
+    // ...
+  })
+)
+
+router.post(
+  '/sso',
+  express.urlencoded({ extended: false }),
+  tryCatch((req, res) =>
+    res.oidc.callback({
+      returnTo: '/public/app',
+      redirectUri: constants.OPENID_REDIRECT,
+      authorizationParams: {
+        response_type: 'id_token', // This requires you to provide a client secret
+        scope: 'openid bapi',
+        response_mode: 'form_post'
+      }
+    })
+  )
+)
+
+router.post('/protectedRoute', openId.requiresAuth(), async function (req, res) {
+  const email = req?.oidc?.user?.email
+
+```
+
+## Cazuri pe care trebuie sa le tratati
+
+### Crearea unui cont nou
