@@ -241,6 +241,49 @@ https://drive.google.com/drive/folders/1wnWUCj61-x-LSnSpgq2LZflMHQQy0xPz?usp=sha
 
 Dupa inrolare, puteti in continuare testa integrarea cu mediul dvs. folosind utilizatorii inrolati, precum puteti testa si autentificarea in site-ul demo creat pentru a simula integrarea: http://demo.beta.roeid.ro/sts
 
+
+## Cazuri pe care trebuie sa le tratati
+
+Pentru toate conturile care vin din ROeID va recomandam sa stocati undeva acest atribut astfel incat sa puteti sti oricand faptul ca este un cont ROeID. Contul ROeID presupune ca cetateanul a fost verificat de la distanta si este cel care pretinde ca este. Accesul la datele unui cont ROeID pe alte canale decat prin autentificarea ROeID se considera o bresa de securitate si nu ar trebui permisa.
+
+### La fiecare login prin ROeID
+
+Va recomandam sa preluati informatiile care vin pe atributele userului in OpenID si sa le stocati in baza dvs. de date. Utilizatorul a fost informat si si-a dat acceptul pentru acest lucru. 
+
+### Daca este un utilizator nou
+
+Va recomandam sa il creati in baza de date iar ulterior sa il conduceti in ecranul unde trebuie sa isi completeze alte date solicitate de sistemul dvs, sau sa verifice corectitudinea datelor preluate din ROeID. Daca sistemul dvs. presupune introducerea de date suplimentare fata de ce primiti din cartea de identitate este recomandat sa nu marcati profilul userului ca fiind complet decat dupa ce face acest lucru.
+
+### Daca este un utilizator existent
+
+Va recomandam sa il asociati cu utilizatorul din baza dvs de date, stocand intr-o coloana separata faptul ca este user provenit din roeid. Asocierea se poate face fie pe CNP fie pe email. Sistemul ROeID verifica faptul ca emailul apartine acestei identitati, confirmand cu cod OTP trimis pe email in cadrul procesului de inrolare.
+
+### Daca in sistemul dvs. sunt mai multe conturi asociate acelui CNP
+
+Va recomandam sa asociati conturile pornind de la email
+
+### Daca in sistemul dvs. pe un cont de cetatean exista mai multe conturi de persoane fizica si juridice
+
+Va recomandam sa afisati imediat dupa login pagina in care cetateanul sa selecteze mai departe ce subcont doreste sa foloseasca
+
+## Logout
+
+Va recomandam sa implementati functie de logout doar pe sesiunea de browser din situl dvs, daca utilizatorul doreste sa se reconecteze o poate face apasand butonul "Autentificare cu ROeID", fara sa mai introduca user/parola.
+
+Pentru a face logout din ROeID se redirecteaza browserul la adresa de tipul  
+
+```
+https://sso.beta.roeid.ro/logout?target=https://dev.mydemosystem.ro
+```
+
+astfel sesiunea ROeID este stearsa iar borwserul retrimite utilizatorul spre pagina principala a sitului dv.
+
+**ATENTIE** logout din ROeID face logout in toate siturile care sunt inrolate in ROeID, utilizatorul va trebui sa introduca din nou user/parola si accept pe telefonul mobil. 
+**LOGOUT** se va afisa clar cu buton pe situl dvs **Deconectare din ROeID** pentru a informa utilizatorul ca nu mai este logat in tot sistemul ROeID.
+
+Recomandam sa afisati **Deconectare din ROeID** doar pentru calculatoare de tip shared/kiosk unde se presupune ca sunt utilizatori diferiti care pot accesa sistemul dvs.
+
+
 ## Tips & Tricks pentru dezvoltatori software
 
 Presupunand ca dezvoltati un sistem informatic pe care doriti sa il integrati cu ROeID este obligatoriu sa alegeti un nume de domeniu pe care sa testati integrarea sistemului dvs. Spre exemplu **dev.mydemosystem.ro**. 
@@ -360,43 +403,14 @@ router.post('/protectedRoute', openId.requiresAuth(), async function (req, res) 
 
 ```
 
-## Cazuri pe care trebuie sa le tratati
+### Exemplu de integrare cu Moodle
 
-Pentru toate conturile care vin din ROeID va recomandam sa stocati undeva acest atribut astfel incat sa puteti sti oricand faptul ca este un cont ROeID. Contul ROeID presupune ca cetateanul a fost verificat de la distanta si este cel care pretinde ca este. Accesul la datele unui cont ROeID pe alte canale decat prin autentificarea ROeID se considera o bresa de securitate si nu ar trebui permisa.
+![image](https://github.com/roeid-ro/integrare/assets/113096980/abe55371-a17f-41f3-b2aa-3e441b88a3e5)
 
-### La fiecare login prin ROeID
+![image](https://github.com/roeid-ro/integrare/assets/113096980/6d1d63b9-a4ef-4ce8-8132-5a9ed0df8b19)
 
-Va recomandam sa preluati informatiile care vin pe atributele userului in OpenID si sa le stocati in baza dvs. de date. Utilizatorul a fost informat si si-a dat acceptul pentru acest lucru. 
+![image](https://github.com/roeid-ro/integrare/assets/113096980/35163785-5d7a-49f5-960a-9f4fc8717efa)
 
-### Daca este un utilizator nou
+![image](https://github.com/roeid-ro/integrare/assets/113096980/cb84ca8d-c759-45ff-a2ec-a39975916dfe)
 
-Va recomandam sa il creati in baza de date iar ulterior sa il conduceti in ecranul unde trebuie sa isi completeze alte date solicitate de sistemul dvs, sau sa verifice corectitudinea datelor preluate din ROeID. Daca sistemul dvs. presupune introducerea de date suplimentare fata de ce primiti din cartea de identitate este recomandat sa nu marcati profilul userului ca fiind complet decat dupa ce face acest lucru.
 
-### Daca este un utilizator existent
-
-Va recomandam sa il asociati cu utilizatorul din baza dvs de date, stocand intr-o coloana separata faptul ca este user provenit din roeid. Asocierea se poate face fie pe CNP fie pe email. Sistemul ROeID verifica faptul ca emailul apartine acestei identitati, confirmand cu cod OTP trimis pe email in cadrul procesului de inrolare.
-
-### Daca in sistemul dvs. sunt mai multe conturi asociate acelui CNP
-
-Va recomandam sa asociati conturile pornind de la email
-
-### Daca in sistemul dvs. pe un cont de cetatean exista mai multe conturi de persoane fizica si juridice
-
-Va recomandam sa afisati imediat dupa login pagina in care cetateanul sa selecteze mai departe ce subcont doreste sa foloseasca
-
-## Logout
-
-Va recomandam sa implementati functie de logout doar pe sesiunea de browser din situl dvs, daca utilizatorul doreste sa se reconecteze o poate face apasand butonul "Autentificare cu ROeID", fara sa mai introduca user/parola.
-
-Pentru a face logout din ROeID se redirecteaza browserul la adresa de tipul  
-
-```
-https://sso.beta.roeid.ro/logout?target=https://dev.mydemosystem.ro
-```
-
-astfel sesiunea ROeID este stearsa iar borwserul retrimite utilizatorul spre pagina principala a sitului dv.
-
-**ATENTIE** logout din ROeID face logout in toate siturile care sunt inrolate in ROeID, utilizatorul va trebui sa introduca din nou user/parola si accept pe telefonul mobil. 
-**LOGOUT** se va afisa clar cu buton pe situl dvs **Deconectare din ROeID** pentru a informa utilizatorul ca nu mai este logat in tot sistemul ROeID.
-
-Recomandam sa afisati **Deconectare din ROeID** doar pentru calculatoare de tip shared/kiosk unde se presupune ca sunt utilizatori diferiti care pot accesa sistemul dvs.
