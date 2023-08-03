@@ -249,6 +249,7 @@ Pentru toate conturile care vin din ROeID va recomandam sa stocati undeva acest 
 ### La fiecare login prin ROeID
 
 Va recomandam sa preluati informatiile care vin pe atributele userului in OpenID si sa le stocati in baza dvs. de date. Utilizatorul a fost informat si si-a dat acceptul pentru acest lucru. 
+Unele softuri de tip Identity Management (ex. Keycloak) au o optiune de a importa aceste atribute de fiecare data si a le salva in baza proprie de date. Mai jos este prezentat un exemplu in acest sens.
 
 ### Daca este un utilizator nou
 
@@ -258,13 +259,16 @@ Va recomandam sa il creati in baza de date iar ulterior sa il conduceti in ecran
 
 Va recomandam sa il asociati cu utilizatorul din baza dvs de date, stocand intr-o coloana separata faptul ca este user provenit din roeid. Asocierea se poate face fie pe CNP fie pe email. Sistemul ROeID verifica faptul ca emailul apartine acestei identitati, confirmand cu cod OTP trimis pe email in cadrul procesului de inrolare.
 
+Acest comportament este implementat pe situl https://www.ghiseul.ro
+
 ### Daca in sistemul dvs. sunt mai multe conturi asociate acelui CNP
 
 Va recomandam sa asociati conturile pornind de la email
 
 ### Daca in sistemul dvs. pe un cont de cetatean exista mai multe conturi de persoane fizica si juridice
 
-Va recomandam sa afisati imediat dupa login pagina in care cetateanul sa selecteze mai departe ce subcont doreste sa foloseasca
+Va recomandam sa afisati imediat dupa login pagina in care cetateanul sa selecteze mai departe ce subcont doreste sa foloseasca.
+Puteti vedea un exemplu functional la PCUe: https://edirect.e-guvernare.ro/
 
 ## Logout
 
