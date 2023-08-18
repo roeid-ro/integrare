@@ -233,7 +233,7 @@ Pentru a veni in sprijinul furnizorilor de servicii in perioada premergatoare in
 
 In acest scop am creat o aplicatie de inrolare utilizatori test si autentificare cu al doilea factor (push notification) speciala pentru mediul de test, versiune valabila doar pentru Android. O puteti downloada de la urmatoarea adresa web :
 
-https://drive.google.com/drive/folders/1wnWUCj61-x-LSnSpgq2LZflMHQQy0xPz?usp=sharing
+[https://drive.google.com/drive/folders/1wnWUCj61-x-LSnSpgq2LZflMHQQy0xPz?usp=sharing](https://drive.google.com/drive/folders/1wnWUCj61-x-LSnSpgq2LZflMHQQy0xPz?usp=sharing)
 
 **Testarea in mediul de test se face doar cu aplicatia mentionata mai sus**, aplicatia disponibila in Google Play si Apple Store nu poate fi folosita pe mediul de test
 
