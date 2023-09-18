@@ -172,6 +172,7 @@ Pentru a adauga un serviciu in pagina aplicatiei mobile si pe portalul web www.r
 3. Descriere scurta de 60 de caractere a denumirii, de exemplu **Plateste online impozite si taxe catre institutiile publice inrolate in sistem**
 4. Descriere lunga, intre 100 si 200 de cuvinte care apare in ecranul afisat la apasarea pe iconita.
 5. URL pentru initierea conectarii la sistem, de preferat un URL care face redirect la Roeid login page, ca de exemplu: https://www.ghiseul.ro/ghiseul/public/login-pscid . Scopul este ca la apasarea acestui link utilizatorului sa i se deschida pagina de login unde introduce user/parola urmand ca la finalizare proces sa fie redirectionat in aplicatia dvs.
+6. Un redirect_uri spre care sistemul de autentificare sa faca redirect dupa ce autentificarea a fost realizata cu succes
 
 ## Date puse la dispozitie de ROeiD si formatul acestora
 
