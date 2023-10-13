@@ -416,6 +416,7 @@ router.post('/protectedRoute', openId.requiresAuth(), async function (req, res) 
 
 ![image](https://github.com/roeid-ro/integrare/assets/113096980/35163785-5d7a-49f5-960a-9f4fc8717efa)
 
+![image](https://github.com/roeid-ro/integrare/assets/113096980/cb84ca8d-c759-45ff-a2ec-a39975916dfe)
 
 ### Exemplu de configurare cu Ory Kratos (self-hosted)
 
@@ -570,6 +571,5 @@ local claims = std.extVar('claims');
 ```
 
 
-![image](https://github.com/roeid-ro/integrare/assets/113096980/cb84ca8d-c759-45ff-a2ec-a39975916dfe)
 
 
