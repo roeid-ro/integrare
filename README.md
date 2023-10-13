@@ -416,6 +416,160 @@ router.post('/protectedRoute', openId.requiresAuth(), async function (req, res) 
 
 ![image](https://github.com/roeid-ro/integrare/assets/113096980/35163785-5d7a-49f5-960a-9f4fc8717efa)
 
+
+### Exemplu de configurare cu Ory Kratos (self-hosted)
+
+Pentru a configura ROeID ca si Generic Provider intr-un sistem bazat pe solutia Ory Kratos self-hosted, pe langa celalalte campuri obligatorii, va fi necesara adaugarea urmatoarei sectiuni in fisierul de tip "Ory Kratos Configuration File":
+
+```yaml
+selfservice:
+  methods:
+    oidc:
+      config:
+        providers:
+          - id: < UN ID UNIC, roeid >
+            provider: generic
+            client_id: <CLIENT_ID>
+            client_secret: <CLIENT_SECRET>
+            issuer_url: <ISSUER_URL>
+            mapper_url: <PATH SAU BASE64 JSONNET>
+            scope:
+              - openid <SCOPE>
+      enabled: true
+```
+
+Model schema de identitate (se poate modifica dupa nevoile proiectului):
+
+```yaml
+{
+  "$id": "https://schemas.ory.sh/presets/kratos/quickstart/email-password/identity.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Persoana Fizica",
+  "type": "object",
+  "group": "default",
+  "properties":
+    {
+      "traits":
+        {
+          "type": "object",
+          "group": "default",
+          "properties":
+            {
+              "email":
+                {
+                  "type": "string",
+                  "format": "email",
+                  "title": "E-Mail",
+                  "ory.sh/kratos":
+                    {
+                      "verification": { "via": "email" },
+                      "recovery": { "via": "email" },
+                      "credentials": { "password": { "identifier": true } },
+                    },
+                },
+              "data_nasterii":
+                {
+                  "type": "string",
+                  "title": "Data Nașterii",
+                  "format": "date",
+                },
+              "name":
+                {
+                  "type": "object",
+                  "required": ["last", "first"],
+                  "properties":
+                    {
+                      "first": { "title": "Prenume", "type": "string" },
+                      "last": { "title": "Nume", "type": "string" },
+                    },
+                },
+              "cnp": { "type": "string", "title": "CNP", "maxLength": 13 },
+              "telefon": { "type": "string", "title": "Telefon" },
+              "adresa":
+                {
+                  "type": "object",
+                  "required": ["localitate", "judet"],
+                  "properties":
+                    {
+                      "strada": { "type": "string", "title": "Strada" },
+                      "nr": { "type": "string", "title": "Număr" },
+                      "bloc": { "type": "string", "title": "Bloc" },
+                      "scara": { "type": "string", "title": "Scara" },
+                      "etaj": { "type": "string", "title": "Etaj" },
+                      "apt": { "type": "string", "title": "Apartament" },
+                      "localitate": { "type": "string", "title": "Localitate" },
+                      "judet": { "type": "string", "title": "Județ" },
+                      "cod_postal":
+                        {
+                          "type": "string",
+                          "title": "Cod Poștal",
+                          "maxLength": 6,
+                        },
+                    },
+                },
+              "act":
+                {
+                  "type": "object",
+                  "properties":
+                    {
+                      "tipact": { "type": "string", "title": "Tip Act" },
+                      "serie": { "type": "string", "title": "Serie" },
+                      "autoritatea_emitenta":
+                        { "type": "string", "title": "Eliberat de" },
+                      "valabilitate_document":
+                        {
+                          "type": "string",
+                          "title": "Valabil Până La",
+                          "format": "date",
+                        },
+                    },
+                },
+            },
+          "required": ["email"],
+          "additionalProperties": false,
+        },
+    },
+}
+```
+
+Model jsonnet pentru maparea schemei de identitate de mai sus pe atributele ROeID:
+
+```yaml
+local claims = std.extVar('claims');
+
+{
+    identity: {
+        traits: {
+            name: {
+                [if "nume" in claims.raw_claims then "first" else null]: claims.raw_claims.nume,
+                [if "prenume" in claims.raw_claims then "last" else null]: claims.raw_claims.prenume,
+            },
+            email: claims.email,
+            [if "cnp" in claims.raw_claims then "cnp" else null]: claims.raw_claims.cnp,
+            [if "telefon" in claims.raw_claims then "telefon" else null]: claims.raw_claims.telefon,
+            verified: claims.verified,
+            [if "datanasterii" in claims.raw_claims then "data_nasterii" else null]: claims.raw_claims.datanasterii,
+            adresa: {
+                [if "strada" in claims.raw_claims then "strada" else null]: claims.raw_claims.strada,
+                [if "bloc" in claims.raw_claims then "bloc" else null]: claims.raw_claims.bloc,
+                [if "nr" in claims.raw_claims then "nr" else null]: claims.raw_claims.nr,
+                [if "etaj" in claims.raw_claims then "etaj" else null]: claims.raw_claims.etaj,
+                [if "apartament" in claims.raw_claims then "apt" else null]: claims.raw_claims.apartament,
+                [if "localitate" in claims.raw_claims then "localitate" else null]: claims.raw_claims.localitate,
+                [if "judet" in claims.raw_claims then "judet" else null]: claims.raw_claims.judet
+            },
+            act: {
+                [if "tipact" in claims.raw_claims then "tipact" else null]: claims.raw_claims.tipact,
+                [if "serie" in claims.raw_claims then "serie" else null]: claims.raw_claims.serie,
+                [if "autoritateaemitenta" in claims.raw_claims then "autoritatea_emitenta" else null]: claims.raw_claims.autoritateaemitenta,
+                [if "valabilitatedocument" in claims.raw_claims then "valabilitate_document" else null]: claims.raw_claims.valabilitatedocument
+            }
+        }
+    }
+}
+```
+
+
 ![image](https://github.com/roeid-ro/integrare/assets/113096980/cb84ca8d-c759-45ff-a2ec-a39975916dfe)
 
 
