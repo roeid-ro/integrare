@@ -317,6 +317,11 @@ Integrarea cu roeid presupune din partea dvs. crearea unei pagini spre care ROeI
 ![image](https://github.com/roeid-ro/integrare/assets/113096980/d39c598f-5cac-4841-bbec-71168ec50317)
 Se vor complata toate atributele folosite
 
+Atentie la setarile atributelor, conform imaginii de mai jos:
+
+![image](https://github.com/roeid-ro/integrare/assets/113096980/9a18a030-87b2-4af9-aafc-833f16804aaf)
+
+
 La fiecare login din ROeID in Keycloack se vor prelua automat aceste atribute ca in exemplul de mai jos.
 
 ![image](https://github.com/roeid-ro/integrare/assets/113096980/3894cde4-8795-40b6-9ebd-256c4c4ad451)
