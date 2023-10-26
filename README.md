@@ -243,6 +243,45 @@ In acest scop am creat o aplicatie de inrolare utilizatori test si autentificare
 Dupa inrolare, puteti in continuare testa integrarea cu mediul dvs. folosind utilizatorii inrolati, precum puteti testa si autentificarea in site-ul demo creat pentru a simula integrarea: http://demo.beta.roeid.ro/sts
 
 
+## Pasi prin care un browser se autentifica in ROeID pornind de la situl furnizorului de servicii
+
+Recomandam sa urmariti acesi pasi in browser pornind de la mediul de test al ghiseul.ro, puteti folosi consola de debugging a browserului Chrome activand optiunea de pastrare a logului activitatii de retea. Veti intelege mai bine la ce sunt folositi parametrii: response_type, redirect_uri, scope. De asemenea va recomandam sa verificati configuratia .well-known a clientului dvs.
+
+```
+1. GET https://www.ghiseul.ro/testare/ghiseul
+
+2. GET https://www.ghiseul.ro/testare/ghiseul/public/login-pscid 
+
+3. GET https://sso.beta.roeid.ro/affwebservices/CASSO/oidc/ghiseul/authorize?response_type=code&client_id=ghiseul&scope=openid+profile+ghiseul&state=1698308536-441d47&redirect_uri=https%3A%2F%2Fwww.ghiseul.ro%2Ftestare%2Fghiseul%2Fpublic%2Flogin-pscid%2Findex
+
+4. GET https://sso.beta.roeid.ro/affwebservices/secure/secureredirect?response_type=code&client_id=ghiseul&scope=openid+profile+ghiseul&state=1698308536-441d47&redirect_uri=https%3A%2F%2Fwww.ghiseul.ro%2Ftestare%2Fghiseul%2Fpublic%2Flogin-pscid%2Findex&SMPORTALURL=x4%2FhHg3RAgUeQLhibKTJjbh4XcmhnbiyABkvshd1Fq2U4uBSDrRIcjKofI2U2MC69KmkY42AmSChet9AIN861tJ21Tled%2FV04A9axdvVSPqBq67qGh2vEdyNGItnVklo
+
+5. GET https://sso.beta.roeid.ro/siteminderagent/forms/shim.fcc?TYPE=33554433&REALMOID=06-0005a1dd-fc2d-132d-abb5-04140a000000&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=accessgateway&TARGET=-SM-HTTPS%3a%2f%2fsso%2ebeta%2eroeid%2ero%2faffwebservices%2fsecure%2fsecureredirect%3fresponse_type%3dcode%26client_id%3dghiseul%26scope%3dopenid%2bprofile%2bghiseul%26state%3d1698308536--441d47%26redirect_uri%3dhttps-%3A-%2F-%2Fwww%2eghiseul%2ero-%2Ftestare-%2Fghiseul-%2Fpublic-%2Flogin--pscid-%2Findex%26SMPORTALURL%3dx4-%2FhHg3RAgUeQLhibKTJjbh4XcmhnbiyABkvshd1Fq2U4uBSDrRIcjKofI2U2MC69KmkY42AmSChet9AIN861tJ21Tled-%2FV04A9axdvVSPqBq67qGh2vEdyNGItnVklo
+-- aici este afisata pagina cu user/parola
+
+6. POST https://sso.beta.roeid.ro/arcotafm/MasterController.jsp?profile=ldapandpush&tokenID=41ff090076adb6ac26710bf579125c78e8535d99&SMAUTHREASON=27&SMAGENTNAME=accessgateway&TARGET=-SM-HTTPS%3a%2f%2fsso%2ebeta%2eroeid%2ero%2faffwebservices%2fsecure%2fsecureredirect%3fresponse_type%3dcode%26client_id%3dghiseul%26scope%3dopenid%2bprofile%2bghiseul%26state%3d1698308536--441d47%26redirect_uri%3dhttps-%3A-%2F-%2Fwww%2eghiseul%2ero-%2Ftestare-%2Fghiseul-%2Fpublic-%2Flogin--pscid-%2Findex%26SMPORTALURL%3dx4-%2FhHg3RAgUeQLhibKTJjbh4XcmhnbiyABkvshd1Fq2U4uBSDrRIcjKofI2U2MC69KmkY42AmSChet9AIN861tJ21Tled-%2FV04A9axdvVSPqBq67qGh2vEdyNGItnVklo
+-- aici se afiseaza mesajul de asteptare pentru 2FA PUSH
+
+7. GET https://sso.beta.roeid.ro/arcotafm/getOTTFromPushSMToken.jsp?txnId=89b5c46e70f4b3876de8f663114592e2f51a95d9
+7. GET https://sso.beta.roeid.ro/arcotafm/getOTTFromPushSMToken.jsp?txnId=89b5c46e70f4b3876de8f663114592e2f51a95d9
+7. GET https://sso.beta.roeid.ro/arcotafm/getOTTFromPushSMToken.jsp?txnId=89b5c46e70f4b3876de8f663114592e2f51a95d9
+-- imediat dupa autorizare din aplicatia mobila se redirecteaza
+
+8. POST https://sso.beta.roeid.ro/arcotafm/MasterController.jsp?profile=ldapandpush&tokenID=7328f07ba3b60f604961eb9f5802c9c297af8a1e&SMAUTHREASON=27&SMAGENTNAME=accessgateway&TARGET=-SM-HTTPS%3a%2f%2fsso%2ebeta%2eroeid%2ero%2faffwebservices%2fsecure%2fsecureredirect%3fresponse_type%3dcode%26client_id%3dghiseul%26scope%3dopenid%2bprofile%2bghiseul%26state%3d1698308536--441d47%26redirect_uri%3dhttps-%3A-%2F-%2Fwww%2eghiseul%2ero-%2Ftestare-%2Fghiseul-%2Fpublic-%2Flogin--pscid-%2Findex%26SMPORTALURL%3dx4-%2FhHg3RAgUeQLhibKTJjbh4XcmhnbiyABkvshd1Fq2U4uBSDrRIcjKofI2U2MC69KmkY42AmSChet9AIN861tJ21Tled-%2FV04A9axdvVSPqBq67qGh2vEdyNGItnVklo
+
+9. GET https://sso.beta.roeid.ro/affwebservices/CASSO/oidc/userconsent
+--- aici se afiseaza cetateanului consimtamantul pentru datele trimise
+
+10. POST https://sso.beta.roeid.ro/affwebservices/CASSO/oidc/userconsent
+-- se trimite consentul
+
+11. GET https://sso.beta.roeid.ro/affwebservices/CASSO/oidc/ghiseul/authorize?SMASSERTIONREF=QUERY&response_type=code&client_id=ghiseul&scope=openid+profile+ghiseul&state=1698308536-441d47&redirect_uri=https%3A%2F%2Fwww.ghiseul.ro%2Ftestare%2Fghiseul%2Fpublic%2Flogin-pscid%2Findex
+-- se pregateste redirectarea la redirect_uri
+
+12. GET https://www.ghiseul.ro/testare/ghiseul/public/login-pscid/index?code=YjAxOWJlZDYtYzdiZi00ZGZmLWFhZTQtNjU4YThiYTJhMTFkLStON3lLN3dKQ2NYRmY3TWh3QUlaR2czMmdPWT0%3D&state=1698308536-441d47
+-- Redirect final pe situl web al furnizorului de servicii sore redirect_uri furnizat de catre acesta.
+```
+
 ## Cazuri pe care trebuie sa le tratati
 
 Pentru toate conturile care vin din ROeID va recomandam sa stocati undeva acest atribut astfel incat sa puteti sti oricand faptul ca este un cont ROeID. Contul ROeID presupune ca cetateanul a fost verificat de la distanta si este cel care pretinde ca este. Accesul la datele unui cont ROeID pe alte canale decat prin autentificarea ROeID se considera o bresa de securitate si nu ar trebui permisa.
