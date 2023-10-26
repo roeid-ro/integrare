@@ -343,6 +343,25 @@ caddy reverse_proxy --from dev.mydemosystem.ro:443 --to locahost:3000
 
 Integrarea cu roeid presupune din partea dvs. crearea unei pagini spre care ROeID sa trimita browserul dupa ce procesul de autentificare s-a terminat cu succes, pagina regasita in documentatie sub numele de **redirect_uri**. Aceasta adresa se transmite echipei tehnice atat pentru mediul de test cat si pentru cel de productie, putand avea mai multe adrese simultan pentru ambele medii.
 
+### Exemplu de configurare Java Application Server cu Keycloak filter
+
+Acest exemplu provide de la un furnizor de servicii care are aplicatia existenta hostata in application server WAS la care a atasatat backend keycloak pentru autentificare utilizatori
+
+keycloak-servlet-filter-adapter-18.0.2.jar
+
+![Imagine WhatsApp 2023-10-26 la 12 07 40_fe38ccd7](https://github.com/roeid-ro/integrare/assets/113096980/c7c711d5-8886-4335-852c-6a6348c5de50)
+![Imagine WhatsApp 2023-10-26 la 12 08 56_6d6abc30](https://github.com/roeid-ro/integrare/assets/113096980/dd40dddd-adc9-437f-83eb-c9fa87d08246)
+
+in cod pentru extragere principal folosim:
+
+![Imagine WhatsApp 2023-10-26 la 12 12 02_a86493a4](https://github.com/roeid-ro/integrare/assets/113096980/e915bbbe-daa6-42b2-b135-af41b0ce6bd4)
+
+Pentru extragere claims folosim:
+```
+String email = keycloakPrincipal.getKeycloakSecurityContext().getIdToken().getPreferredUsername();
+String cnp = keycloakPrincipal.getKeycloakSecurityContext().getIdToken().getOtherClaims().get("cnp");
+```
+
 ### Exemplu de configurare pentru Keycloak
 
 ![image](https://github.com/roeid-ro/integrare/assets/113096980/45cf9ffe-8b06-4666-ac32-92dbc0327ace)
