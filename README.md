@@ -341,6 +341,10 @@ Iata un exemplu de parametri de pornire pentru caddy pentru a trimite tot trafic
 caddy reverse_proxy --from dev.mydemosystem.ro:443 --to locahost:3000
 ```
 
+Astfel din browserul dvs veti putea accesa la adresa https://dev.mydemosystem.ro:443  situl la care lucrati.
+
+Nu uitati in HOSTS sa configurati adresa dev.mydemosystems.ro sa fie tot localhost sau IP-ul serverului unde hostati serverul (in Windows c:\Windows\System32\Drivers\etc\hosts si in Linux /etc/hosts)
+
 Integrarea cu roeid presupune din partea dvs. crearea unei pagini spre care ROeID sa trimita browserul dupa ce procesul de autentificare s-a terminat cu succes, pagina regasita in documentatie sub numele de **redirect_uri**. Aceasta adresa se transmite echipei tehnice atat pentru mediul de test cat si pentru cel de productie, putand avea mai multe adrese simultan pentru ambele medii.
 
 ### Exemplu de configurare Java Application Server cu Keycloak filter
