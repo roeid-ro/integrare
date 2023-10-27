@@ -340,6 +340,7 @@ Iata un exemplu de parametri de pornire pentru caddy pentru a trimite tot trafic
 ```
 caddy reverse-proxy --from dev.mydemosystem.ro:443 --to locahost:3000
 ```
+NOTA --internal-certs o puteti folosi daca calculatorul pe care il folositi nu are acces la internet.
 
 Astfel din browserul dvs veti putea accesa la adresa https://dev.mydemosystem.ro:443  situl la care lucrati.
 
