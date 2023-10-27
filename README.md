@@ -357,6 +357,15 @@ keycloak-servlet-filter-adapter-18.0.2.jar
 ![Imagine WhatsApp 2023-10-26 la 12 07 40_fe38ccd7](https://github.com/roeid-ro/integrare/assets/113096980/c7c711d5-8886-4335-852c-6a6348c5de50)
 ![Imagine WhatsApp 2023-10-26 la 12 08 56_6d6abc30](https://github.com/roeid-ro/integrare/assets/113096980/dd40dddd-adc9-437f-83eb-c9fa87d08246)
 
+in cod se defineste acest filtru astfel:
+
+![Imagine WhatsApp 2023-10-27 la 13 35 07_9a665355](https://github.com/roeid-ro/integrare/assets/113096980/5c52c30b-e663-443e-b9cf-d7976147a733)
+
+fisierul json are urmatorul continut
+
+![image](https://github.com/roeid-ro/integrare/assets/113096980/31da045e-13c0-42c5-87ba-6793ad91e4ee)
+
+
 in cod pentru extragere principal folosim:
 
 ![Imagine WhatsApp 2023-10-26 la 12 12 02_a86493a4](https://github.com/roeid-ro/integrare/assets/113096980/e915bbbe-daa6-42b2-b135-af41b0ce6bd4)
