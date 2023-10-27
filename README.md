@@ -350,7 +350,7 @@ Integrarea cu roeid presupune din partea dvs. crearea unei pagini spre care ROeI
 
 ### Exemplu de configurare Java Application Server cu Keycloak filter
 
-Acest exemplu provide de la un furnizor de servicii care are aplicatia existenta hostata in application server WAS la care a atasatat backend keycloak pentru autentificare utilizatori
+Acest exemplu provine de la un furnizor de servicii care are aplicatia existenta hostata in application server WAS la care a atasatat backend keycloak pentru autentificare utilizatori
 
 keycloak-servlet-filter-adapter-18.0.2.jar
 
