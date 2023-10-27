@@ -338,7 +338,7 @@ https://caddyserver.com/docs/quick-starts/reverse-proxy
 
 Iata un exemplu de parametri de pornire pentru caddy pentru a trimite tot traficul spre aplicatia dvs pornita pe portul 3000.
 ```
-caddy reverse_proxy --from dev.mydemosystem.ro:443 --to locahost:3000
+caddy reverse-proxy --from dev.mydemosystem.ro:443 --to locahost:3000
 ```
 
 Astfel din browserul dvs veti putea accesa la adresa https://dev.mydemosystem.ro:443  situl la care lucrati.
