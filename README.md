@@ -212,7 +212,7 @@ Paleta de culori folosita in ROeiD
 - ![#f1f3f8](https://placehold.co/15x15/f1f3f8/f1f3f8.png) `#f1f3f8` Ghost white
 - ![#d1d9e8](https://placehold.co/15x15/d1d9e8/d1d9e8.png) `#d1d9e8` Levender
 
-In paginile web ale furnizorilor de servicii se vor insera butoane de tip "Conectare cu ROeiD" folosind fisierele regasite aici: https://github.com/roeid-ro/integrare/tree/main/html
+In paginile web ale furnizorilor de servicii se vor insera butoane de tip "Conectare cu ROeID" folosind exemplul regasit aici: https://api.roeid.ro/public/demo.html . Folositi cele 2 fisiere js si css precum si stilurile mentionate astfel sa fiti la zi cu orice modificare va aparea in api-ul ROeID.
 
 Iata un exemplu de vizualizare a butoanelor pe fundal alb si albastru. Culorile propuse sunt din paleta ROeiD dar imaginile in format SVG precum si fontul permit integrarea in orice alta paleta de culori a siturilor partenere. Recomandam folosirea logo-ului primar pentru fundal deschis la culoare si a celui secundar pentru fundal inchis la culoare. Se va afisa textul `Conectare cu ROeID` intocmai in continutul butonului.
 
