@@ -354,7 +354,8 @@ Acest exemplu provine de la un furnizor de servicii care are aplicatia existenta
 
 keycloak-servlet-filter-adapter-18.0.2.jar
 
-![Imagine WhatsApp 2023-10-26 la 12 07 40_fe38ccd7](https://github.com/roeid-ro/integrare/assets/113096980/c7c711d5-8886-4335-852c-6a6348c5de50)
+![keycloak](https://github.com/user-attachments/assets/c92651fb-0f3a-4bc4-b9d3-150e806e3c66)
+
 ![Imagine WhatsApp 2023-10-26 la 12 08 56_6d6abc30](https://github.com/roeid-ro/integrare/assets/113096980/dd40dddd-adc9-437f-83eb-c9fa87d08246)
 
 in cod se defineste acest filtru astfel:
