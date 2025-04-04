@@ -227,6 +227,20 @@ Logo-ul ROeiD in varianta color negru-albastru si alb negativ il gasiti aici:
 - https://github.com/roeid-ro/integrare/blob/main/html/roeid_logo_primary.svg
 - https://github.com/roeid-ro/integrare/blob/main/html/roeid_logo_secondary.svg
 
+## ANUNT IMPORTANT langa butonul Conectare cu ROeID
+
+Este obligatoriu ca langa butonul de conectare cu ROeID sa afisati vizibil si lizibil intreg continutul acestui mesaj.
+
+```
+Vă recomandăm să folosiți aplicația ROeID pentru conectarea la sistemul ______. 
+ROeID este o aplicație pe telefonul mobil pusă la dispoziție de către Autoritatea pentru Digitalizarea României , 
+aplicație notificată la Comisia Europeană ca modalitatea oficială de identificare electronică in România. 
+
+Cuvintele "ROeID", "Autoritatea pentru Digitalizarea Romaniei" si "Comisia Europeana" vor avea fiecare urmatorul link:
+https://www.roeid.ro/
+https://adr.gov.ro/
+https://ec.europa.eu/digital-building-blocks/sites/display/EIDCOMMUNITY/Romania+-+ROeID
+```
 
 ## Mediul de test ROeID
 
