@@ -1,3 +1,5 @@
+# [🇷🇴 Română](README.md) | [🇬🇧 English](README.en.md)
+
 # Detalii despre integrarea cu sistemul ROeiD
 
 ## Modelul de incredere pentru SSO
